@@ -1,0 +1,16 @@
+[
+    {
+        "id": 37,
+        "description": "Limonada",
+        "status": "Todo",
+        "createdAt": "2026-01-30T14:56:31.263Z",
+        "updatedAt": "2026-01-30T15:04:52.003Z"
+    },
+    {
+        "id": 38,
+        "description": "holiwi",
+        "status": "Todo",
+        "createdAt": "2026-01-30T14:56:36.068Z",
+        "updatedAt": "Esta tarea no ha sido actualizada."
+    }
+]
