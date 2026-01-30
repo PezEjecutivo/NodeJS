@@ -82,3 +82,20 @@ export async function markProgress(id, status) {
 
     console.log(`Task updated successfully (ID: ${id})`);
 }
+
+export async function listTasks(status) {
+    const file = await readFile(`./Tasks.json`, "utf-8");
+    const jsonFile = JSON.parse(file);
+
+    if (status) {
+
+        jsonFile.filter(task => task.status.toLowerCase().includes(status.toLowerCase())).forEach(task => {
+            console.log(`ID: ${task.id} - Task: ${task.description} - Status: ${task.status}`);
+        });;
+
+    } else {
+        jsonFile.forEach(task => {
+            console.log(`ID: ${task.id} - Task: ${task.description} - Status: ${task.status}`);
+        });
+    }
+}

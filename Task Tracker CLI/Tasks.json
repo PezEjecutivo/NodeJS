@@ -5,5 +5,33 @@
         "status": "Done",
         "createdAt": "2026-01-30T14:56:31.263Z",
         "updatedAt": "2026-01-30T15:44:19.675Z"
+    },
+    {
+        "id": 39,
+        "description": "Hacer comida",
+        "status": "Todo",
+        "createdAt": "2026-01-30T15:59:14.484Z",
+        "updatedAt": "Esta tarea no ha sido actualizada."
+    },
+    {
+        "id": 40,
+        "description": "Hacer limonada",
+        "status": "In progress",
+        "createdAt": "2026-01-30T15:59:24.423Z",
+        "updatedAt": "2026-01-30T16:03:30.175Z"
+    },
+    {
+        "id": 41,
+        "description": "Hacer pimiento",
+        "status": "Todo",
+        "createdAt": "2026-01-30T15:59:28.069Z",
+        "updatedAt": "Esta tarea no ha sido actualizada."
+    },
+    {
+        "id": 42,
+        "description": "Hacer cena",
+        "status": "Done",
+        "createdAt": "2026-01-30T15:59:30.673Z",
+        "updatedAt": "2026-01-30T16:03:19.230Z"
     }
 ]
