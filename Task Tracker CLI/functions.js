@@ -69,3 +69,16 @@ export async function deleteTask(id) {
 
     console.log(`Task deleted successfully (ID: ${id})`);
 }
+
+export async function markInProgress(id) {
+    const file = await readFile(`./Tasks.json`, "utf-8");
+    const jsonFile = JSON.parse(file);
+    const index = jsonFile.findIndex(task => task.id == id);
+
+    jsonFile[index].status = "In progress";
+    jsonFile[index].updatedAt = new Date();
+
+    await writeFile(`./Tasks.json`, JSON.stringify(jsonFile));
+
+    console.log(`Task updated successfully (ID: ${id})`);
+}

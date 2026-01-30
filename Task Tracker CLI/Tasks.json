@@ -1,1 +1,9 @@
-[{"id":37,"description":"Limonada","status":"Todo","createdAt":"2026-01-30T14:56:31.263Z","updatedAt":"2026-01-30T15:04:52.003Z"}]
+[
+    {
+        "id": 37,
+        "description": "Limonada",
+        "status": "In progress",
+        "createdAt": "2026-01-30T14:56:31.263Z",
+        "updatedAt": "2026-01-30T15:37:51.326Z"
+    }
+]
