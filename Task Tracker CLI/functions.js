@@ -49,3 +49,23 @@ export async function updateTask(id, desc) {
 
     console.log(`Task updated successfully (ID: ${id})`);
 }
+
+export async function deleteTask(id) {
+    const file = await readFile(`./Tasks.json`, "utf-8");
+    const jsonFile = JSON.parse(file);
+    const task = jsonFile.find(task => task.id == id);
+
+    if (!Number(id)) {
+        return console.log("La ID debe ser un numero");
+    }
+
+    if (!task) {
+        return console.log(`This task doesnt exist (ID: ${id})`);
+    }
+
+    const updatedJsonFile = jsonFile.slice(task, 1);
+
+    await writeFile("./Tasks.json", JSON.stringify(updatedJsonFile));
+
+    console.log(`Task deleted successfully (ID: ${id})`);
+}
