@@ -1,0 +1,21 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "Repositorio con multiples mini proyectos de NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PezEjecutivo/NodeJS.git"
+  },
+  "keywords": [],
+  "author": "PabloVG",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/PezEjecutivo/NodeJS/issues"
+  },
+  "homepage": "https://github.com/PezEjecutivo/NodeJS#readme"
+}
