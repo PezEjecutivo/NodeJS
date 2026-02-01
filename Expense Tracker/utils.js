@@ -35,4 +35,17 @@ async function createExpense(desc, amount) {
     console.log(`Expense added successfully (ID: ${id})`);
 }
 
-createExpense("Powerking", "1.10");
+async function updateExpense(id, desc, amount) {
+    const file = await readFile("./expenses.json", "utf-8");
+    const jsonFile = JSON.parse(file);
+    const index = jsonFile.findIndex(expense => expense.id == id);
+
+    jsonFile[index].description = desc;
+    jsonFile[index].amount = amount;
+
+    await writeFile("./expenses.json", JSON.stringify(jsonFile));
+
+    console.log(`Expense updated successfully (ID: ${id})`);
+}
+
+updateExpense(7, "PowerQueen", "1.20");

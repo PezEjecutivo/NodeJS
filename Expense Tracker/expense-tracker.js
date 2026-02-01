@@ -15,6 +15,18 @@ program.command('add')
         console.log("Añadir");
     });
 
+program.command('update')
+    .argument('[id]', 'ID del gasto')
+    .option('--description <string>', 'Descripción del gasto')
+    .option('--amount <int>', 'Cantidad del gasto')
+    .action((id, options) => {
+        if (!id) {
+            console.error("Debes de proporcionar el ID");
+            process.exit(1);
+        }
+        console.log("Actualizar");
+    });
+
 program.command('list')
     .description('Muestra los gastos')
     .action(() => {
