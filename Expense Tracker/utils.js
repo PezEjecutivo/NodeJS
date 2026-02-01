@@ -67,3 +67,15 @@ async function listExpense() {
         console.log(`${expense.id}  ${expense.date}   ${expense.description}        ${expense.amount}`);
     });
 }
+
+async function summaryExpense() {
+    const file = await readFile("./expenses.json", "utf-8");
+    const jsonFile = JSON.parse(file);
+    let total = 0;
+
+    jsonFile.forEach(expense => {
+        total += Number(expense.amount);
+    });
+
+    console.log(`Total expenses: ${total}$`);
+}
