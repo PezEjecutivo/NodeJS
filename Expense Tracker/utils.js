@@ -48,4 +48,12 @@ async function updateExpense(id, desc, amount) {
     console.log(`Expense updated successfully (ID: ${id})`);
 }
 
-updateExpense(7, "PowerQueen", "1.20");
+async function deleteExpense(id) {
+    const file = await readFile("./expenses.json", "utf-8");
+    const jsonFile = JSON.parse(file);
+    const expense = jsonFile.filter(expense => expense.id != id);
+
+    await writeFile("./expenses.json", JSON.stringify(expense));
+
+    console.log(`Expense deleted successfully (ID: ${id})`);
+}
