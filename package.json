@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/PezEjecutivo/NodeJS/issues"
   },
-  "homepage": "https://github.com/PezEjecutivo/NodeJS#readme"
+  "homepage": "https://github.com/PezEjecutivo/NodeJS#readme",
+  "dependencies": {
+    "commander": "^14.0.3"
+  }
 }
