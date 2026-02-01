@@ -57,3 +57,13 @@ async function deleteExpense(id) {
 
     console.log(`Expense deleted successfully (ID: ${id})`);
 }
+
+async function listExpense() {
+    const file = await readFile("./expenses.json", "utf-8");
+    const jsonFile = JSON.parse(file);
+
+    console.log("ID  Date       Description  Amount");
+    jsonFile.forEach(expense => {
+        console.log(`${expense.id}  ${expense.date}   ${expense.description}        ${expense.amount}`);
+    });
+}
