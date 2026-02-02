@@ -2,7 +2,7 @@
 
 Es un proyecto realizado con NodeJS utilizando exclusivamente sus funciones nativas, importando unicamente la dependencia de `Commander`.
 
-El proyecto esta hecho con los requisitos y requerimientos de la pagina: https://roadmap.sh/projects/github-user-activity
+El proyecto esta hecho con los requisitos y requerimientos de la pagina: https://roadmap.sh/projects/expense-tracker
 
 ## Ejemplos de uso
 
