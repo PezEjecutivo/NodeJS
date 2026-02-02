@@ -9,6 +9,11 @@ async function getNewId() {
     return newId;
 }
 
+function getMonthName(number) {
+    const date = new Date(`${number}/1/2000`);
+    return date.toLocaleString("en-EN", { month: "long" });
+}
+
 async function createExpense(desc, amount) {
     const id = await getNewId();
     let file = [];
@@ -68,14 +73,26 @@ async function listExpense() {
     });
 }
 
-async function summaryExpense() {
+async function summaryExpense(month) {
     const file = await readFile("./expenses.json", "utf-8");
     const jsonFile = JSON.parse(file);
     let total = 0;
 
-    jsonFile.forEach(expense => {
-        total += Number(expense.amount);
-    });
+    if (month) {
+        const filteredExpenses = jsonFile.filter(expense => expense.date.slice("/")[0] == month);
 
-    console.log(`Total expenses: ${total}$`);
+        filteredExpenses.forEach(expense => {
+            total += Number(expense.amount);
+        });
+
+        console.log(`Total expenses: ${total}$ in ${getMonthName(month)}`);
+
+    } else {
+        jsonFile.forEach(expense => {
+            total += Number(expense.amount);
+        });
+
+        console.log(`Total expenses: ${total}$`);
+    }
+
 }
