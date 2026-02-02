@@ -1,1 +1,44 @@
-[{"id":24,"date":"2/1/2026","description":"Power","amount":"120"},{"id":25,"date":"2/1/2026","description":"Power","amount":"120"},{"id":27,"date":"2/1/2026","description":"Power","amount":"120"},{"id":28,"date":"2/1/2026","description":"Power","amount":"120"},{"id":29,"date":"2/1/2026","description":"Power","amount":"120"},{"id":30,"date":"2/1/2026","description":"Power","amount":"120"}]
+[
+    {
+        "id": 24,
+        "date": "2/1/2026",
+        "description": "Comidona",
+        "amount": "20"
+    },
+    {
+        "id": 27,
+        "date": "2/1/2026",
+        "description": "Power",
+        "amount": "120"
+    },
+    {
+        "id": 28,
+        "date": "2/1/2026",
+        "description": "Power",
+        "amount": "120"
+    },
+    {
+        "id": 29,
+        "date": "2/1/2026",
+        "description": "Power",
+        "amount": "120"
+    },
+    {
+        "id": 30,
+        "date": "2/1/2026",
+        "description": "Power",
+        "amount": "120"
+    },
+    {
+        "id": 31,
+        "date": "2/2/2026",
+        "description": "Holiwi",
+        "amount": "20"
+    },
+    {
+        "id": 32,
+        "date": "2/2/2026",
+        "description": "Holiwi",
+        "amount": "20"
+    }
+]

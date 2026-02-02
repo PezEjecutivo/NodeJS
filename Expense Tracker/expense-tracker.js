@@ -1,4 +1,5 @@
 import { Command } from "commander";
+import { createExpense, deleteExpense, listExpense, summaryExpense, updateExpense } from "./utils.js";
 const program = new Command();
 
 program
@@ -12,7 +13,11 @@ program.command('add')
     .option('--description <string>', 'Descripción del gasto')
     .option('--amount <int>', 'Cantidad del gasto')
     .action((options) => {
-        console.log("Añadir");
+        if (options.description && options.amount) {
+            createExpense(options.description, options.amount);
+        } else {
+            console.log("Debes introcudir descripción y cantidad a la hora de crear un gasto");
+        }
     });
 
 program.command('update')
@@ -24,27 +29,32 @@ program.command('update')
             console.error("Debes de proporcionar el ID");
             process.exit(1);
         }
-        console.log("Actualizar");
+
+        updateExpense(id, options.description, options.amount);
     });
 
 program.command('list')
     .description('Muestra los gastos')
     .action(() => {
-        console.log("Lista");
+        listExpense();
     });
 
 program.command('summary')
     .description('Muestra un resumen de los gastos')
     .option('--month <int>', 'Mes del año del que quieres mostrar los gastos')
     .action((options) => {
-        console.log("Resumen");
+        summaryExpense(options.month);
     });
 
 program.command('delete')
     .description('Borra un gasto')
     .option('--id <int>', 'ID de la tarea a borrar')
     .action((options) => {
-        console.log("Borrar");
+        if (options.id) {
+            deleteExpense(options.id);
+        } else {
+            console.log("Debes introducir un ID");
+        }
     });
 
 program.parse();

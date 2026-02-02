@@ -14,7 +14,7 @@ function getMonthName(number) {
     return date.toLocaleString("en-EN", { month: "long" });
 }
 
-async function createExpense(desc, amount) {
+export async function createExpense(desc, amount) {
     const id = await getNewId();
     let file = [];
 
@@ -40,20 +40,20 @@ async function createExpense(desc, amount) {
     console.log(`Expense added successfully (ID: ${id})`);
 }
 
-async function updateExpense(id, desc, amount) {
+export async function updateExpense(id, desc, amount) {
     const file = await readFile("./expenses.json", "utf-8");
     const jsonFile = JSON.parse(file);
     const index = jsonFile.findIndex(expense => expense.id == id);
 
-    jsonFile[index].description = desc;
-    jsonFile[index].amount = amount;
+    desc ? jsonFile[index].description = desc : "";
+    amount ? jsonFile[index].amount = amount : "";
 
     await writeFile("./expenses.json", JSON.stringify(jsonFile));
 
     console.log(`Expense updated successfully (ID: ${id})`);
 }
 
-async function deleteExpense(id) {
+export async function deleteExpense(id) {
     const file = await readFile("./expenses.json", "utf-8");
     const jsonFile = JSON.parse(file);
     const expense = jsonFile.filter(expense => expense.id != id);
@@ -63,7 +63,7 @@ async function deleteExpense(id) {
     console.log(`Expense deleted successfully (ID: ${id})`);
 }
 
-async function listExpense() {
+export async function listExpense() {
     const file = await readFile("./expenses.json", "utf-8");
     const jsonFile = JSON.parse(file);
 
@@ -73,7 +73,7 @@ async function listExpense() {
     });
 }
 
-async function summaryExpense(month) {
+export async function summaryExpense(month) {
     const file = await readFile("./expenses.json", "utf-8");
     const jsonFile = JSON.parse(file);
     let total = 0;
