@@ -120,3 +120,21 @@ $ expense-tracker summary
 $ expense-tracker summary --month 8
 # Total expenses for August: $20
 ```
+
+## 5. Unit Converter
+
+### Requisitos
+Es una pagina web que tendra diferentes secciones para las diferentes medidas. El usuario puede introducir un valor a convertir, la unidad a convertir de una a otra, y ver la cantidad convertida.
+
+- El usuario puede introducir un valor a convertir
+- El usuario puede introducir de que medida a que medida
+- El usuario puede ver el resultado de la conversión
+- El usuario puede convertir entre diferentes unidades de medida como longitud, peso, temperatura
+
+Puedes incluir las siguiente unidades de medida a convertir
+
+- Longitud: milimetro, centimetro, metro, kilometro, pulgada, pies, yardas y millas
+- Peso: miligramos, gramos, kilogramos, onzas y libras
+- Temperatura: Celsius, Farenheit y Kelvin
+
+![alt text](image.png)

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <title>Unit Converter</title>
+</head>
+
+<body>
+    <header style="display: flex; flex-direction: column; height: 23dvh;">
+        <h1>Unit Converter</h1>
+
+        <nav style="display: flex; flex-direction: row; justify-content: center;">
+            <h3 style="margin-left: 40px;"><a href="./longitud.html">Length</a></h3>
+            <h3 style="margin-left: 40px;"><a href="./peso.html">Weight</a></h3>
+            <h3 style="margin-left: 40px;"><a href="./temperatura.html">Temperature</a></h3>
+        </nav>
+    </header>
+
+    <div id="divForm" style="display: block;">
+        <form id="unitForm" style="display: flex; flex-direction: column; margin-top: 50px;">
+
+            <label for="amount">Enter the length to convert</label>
+            <input type="number" name="amount" id="amount">
+
+            <label for="unitFrom">Unit to convert from</label>
+            <select name="unitFrom" id="unitFrom">
+                <option value="millimeter">Millimeter</option>
+                <option value="centimeter">Centimeter</option>
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="inch">Inch</option>
+                <option value="foot">Foot</option>
+                <option value="yard">Yard</option>
+                <option value="mile">Mile</option>
+            </select>
+
+            <label for="unitTo">Unit to convert to</label>
+            <select name="unitTo" id="unitTo">
+                <option value="millimeter">Millimeter</option>
+                <option value="centimeter">Centimeter</option>
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="inch">Inch</option>
+                <option value="foot">Foot</option>
+                <option value="yard">Yard</option>
+                <option value="mile">Mile</option>
+            </select>
+
+            <input type="submit" value="Convert">
+        </form>
+    </div>
+
+    <div id="divResult" style="display: none;">
+        <h1 id="amountText"></h1>
+
+        <form id="resetForm">
+            <input type="submit" value="Reset">
+        </form>
+    </div>
+
+    <script>
+        const unitForm = document.getElementById("unitForm");
+        const resetForm = document.getElementById("resetForm");
+
+        const divForm = document.getElementById("divForm");
+        const divResult = document.getElementById("divResult");
+
+        unitForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const data = {
+                amount: document.getElementById("amount").value,
+                unitFrom: document.getElementById("unitFrom").value,
+                unitTo: document.getElementById("unitTo").value
+            };
+
+            const request = await fetch('/longitud', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await request.json();
+
+
+            if (result) {
+                const amountText = document.getElementById("amountText");
+                divForm.style.display = "none";
+
+                amountText.innerHTML = result;
+                divResult.style.display = "block";
+            }
+        });
+
+
+        unitForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            unitForm.reset();
+
+            divForm.style.display = "block";
+            divResult.style.display = "none";
+        })
+
+
+    </script>
+</body>
+
+</html>

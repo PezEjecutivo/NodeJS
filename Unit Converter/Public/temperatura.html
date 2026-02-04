@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <title>Unit Converter</title>
+</head>
+
+<body>
+    <header style="display: flex; flex-direction: column; height: 23dvh;">
+        <h1>Unit Converter</h1>
+
+        <nav style="display: flex; flex-direction: row; justify-content: center;">
+            <h3 style="margin-left: 40px;"><a href="./longitud.html">Longitud</a></h3>
+            <h3 style="margin-left: 40px;"><a href="./peso.html">Peso</a></h3>
+            <h3 style="margin-left: 40px;"><a href="./temperatura.html">Temperatura</a></h3>
+        </nav>
+    </header>
+
+    <form target="_self" action="./longitud.html" method="post"
+        style="display: flex; flex-direction: column; margin-top: 50px;">
+
+        <input type="number" name="amount" id="">
+
+        <select name="unitFrom" id="">
+            <option value="">Medida 1</option>
+            <option value="">Medida 2</option>
+            <option value="">Medida 3</option>
+        </select>
+
+        <select name="unitTo" id="">
+            <option value="">Medida 1</option>
+            <option value="">Medida 2</option>
+            <option value="">Medida 3</option>
+        </select>
+
+        <input type="submit" value="Convertir">
+    </form>
+</body>
+
+</html>
